@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Conversor CSS VTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script defer src="./scripts/scripts.js"></script>
+</head>
+
+<body>
+    <header class="header-signature">
+        <h1>Conversor CSS VTEX</h1>
+        <span>
+            Eduardo S.P.
+        </span>
+    </header>
+    <label for="cssInput">Cole seu CSS (DevTools):</label>
+    <textarea id="cssInput"
+        placeholder=".vtex-rich-text-0-x-container.vtex-rich-text-0-x-container--first__shelf-title { height: 100%; }"></textarea>
+
+    <label>
+        <input type="checkbox" id="useScss" />
+        Preservar SCSS (pseudo-elementos/pseudo-classes e @media) <br/>
+        *Marque somente se estiver usando pseudo-elementos.
+    </label>
+    <br />
+    <button id="convertBtn">Converter</button>
+
+    <div class="row out">
+        <div class="output">
+            <h3>Saída Clean (sem handles)</h3>
+            <textarea id="cleanOutput" readonly></textarea>
+            <button data-copy="cleanOutput">Copiar Clean</button>
+            <div class="muted">Ex.: <code>.container.first__shelf-title { ... }</code></div>
+        </div>
+        <div class="output">
+            <h3>Saída Global</h3>
+            <textarea id="globalOutput" readonly></textarea>
+            <button data-copy="globalOutput">Copiar Global</button>
+            <div class="muted">Ex.:
+                <code>:global(.vtex-...-x-container):global(.vtex-...-x-first__shelf-title) { &::after { ... } }</code>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
